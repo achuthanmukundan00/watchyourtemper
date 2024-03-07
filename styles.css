@@ -1,12 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Nova Square', sans-serif;
   background-color: black; /* Set the background color */
+  height: 100vh; /* Set height to occupy the full viewport height */
 }
 
 .content {
@@ -18,4 +18,11 @@ h1 {
   font-weight: bold;
   margin: 0; /* Remove default margin */
   color: white; /* Set text color */
+}
+
+/* Adjust font size for smaller screens */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2em; /* Adjust font size for smaller screens */
+  }
 }
