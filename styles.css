@@ -4,7 +4,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Reem Kufi Fun', sans-serif;
+  font-family: 'Cinzel', sans-serif;
   background-color: black; /* Set the background color */
   height: 100vh; /* Set height to occupy the full viewport height */
 }
@@ -14,10 +14,10 @@ body {
 }
 
 h1 {
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 4em;
+  font-weight: 400;
   margin: 0; /* Remove default margin */
-  color: white; /* Set text color */
+  color: rgb(248, 236, 218); /* Set text color */
 }
 
 .letter {
