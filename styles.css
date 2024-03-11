@@ -28,3 +28,10 @@ h1 {
 .period {
   font-size: 0.6em; /* Adjust font size for the period */
 }
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5em; /* Adjust font size for smaller screens */
+  }
+}
