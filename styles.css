@@ -13,25 +13,14 @@ body {
   text-align: center;
 }
 
-h1 {
-  font-size: 4em;
-  font-weight: 400;
-  margin: 0; /* Remove default margin */
-  color: rgb(248, 236, 218); /* Set text color */
-}
-
-.letter {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-.period {
-  font-size: 0.6em; /* Adjust font size for the period */
+.logo {
+  max-width: 80%; /* Allow the image to be responsive */
+  height: auto; /* Maintain the aspect ratio */
 }
 
 /* Media Query for smaller screens */
 @media screen and (max-width: 768px) {
-  h1 {
-    font-size: 2.5em; /* Adjust font size for smaller screens */
+  .logo {
+    max-width: 90%; /* Adjust the image size for smaller screens */
   }
 }
