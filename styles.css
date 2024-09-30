@@ -36,3 +36,20 @@ body {
 .social-icon:hover {
   transform: scale(1.1); /* Slightly enlarge icon on hover */
 }
+
+/* Adjust the container's maximum width */
+.container {
+  max-width: 1200px;
+}
+
+/* Ensure all images have the same aspect ratio */
+.img-fluid {
+  height: 100%; /* Make images responsive while preserving aspect ratio */
+  object-fit: cover; /* Ensures images cover their containers */
+}
+
+/* Add hover effect */
+.img-fluid:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  transition: transform 0.3s ease;
+}
