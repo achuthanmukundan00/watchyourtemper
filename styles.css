@@ -124,9 +124,25 @@ body::-webkit-scrollbar {
 .nav-top {
   position: absolute;
   top: 20px;
+  left: 30px;
   right: 30px;
   z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.nav-left .logo {
+  height: 40px;
+  width: auto;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 
 .nav-top a {
   color: #ccc;
