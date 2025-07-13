@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>feed the machine</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="images/thumbnail.jpg" type="image/png" />
+</head>
+
+<body class="feed-page">
+    <div class="grain-overlay"></div>
+    <div class="overlay">
+        <nav class="nav-top">
+            <div class="nav-left">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="logo" />
+                </a>
+            </div>
+            <div class="nav-right">
+                <a href="https://www.instagram.com/watchyourtemper/" target="_blank">
+                    <img src="images/instagram.svg" alt="Instagram" class="social-icon" />
+                </a>
+                <a href="https://www.youtube.com/@watchyourtemper" target="_blank">
+                    <img src="images/youtube.svg" alt="YouTube" class="social-icon" />
+                </a>
+                <a href="https://soundcloud.com/watchyourtemper" target="_blank">
+                    <img src="images/soundcloud.svg" alt="SoundCloud" class="social-icon" />
+                </a>
+            </div>
+        </nav>
+        <div class="centered-feed">
+            <h1 class="feed-title">Your rage is sacred. Let it speak.</h1>
+
+            <div class="link-buttons">
+                <a href="join.html" class="feed-btn">🩸 Join the Inner Circle</a>
+                <a href="https://watchyourtemper.bandcamp.com/" target="_blank" class="feed-btn">Bandcamp</a>
+                <a href="https://open.spotify.com/artist/..." target="_blank" class="feed-btn">Spotify</a>
+                <a href="https://music.youtube.com/channel/..." target="_blank" class="feed-btn">YouTube Music</a>
+                <a href="https://tidal.com/browse/artist/..." target="_blank" class="feed-btn">Tidal</a>
+                <a href="https://music.apple.com/artist/..." target="_blank" class="feed-btn">Apple Music</a>
+            </div>
+        </div>
+    </div>
+    <button id="mute-btn">🔇</button>
+    <audio id="bg-audio" autoplay loop muted playsinline>
+        <source src="audio/s11_burial_loop.mp3" type="audio/mp3" />
+        <script>
+            const audio = document.getElementById("bg-audio");
+            const muteBtn = document.getElementById("mute-btn");
+
+            const startAudio = () => {
+                audio.muted = false;
+                audio.play().catch(e => console.log("Autoplay failed:", e));
+                document.removeEventListener("click", startAudio);
+                document.removeEventListener("touchstart", startAudio);
+                document.removeEventListener("keydown", startAudio);
+            };
+
+            muteBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                audio.muted = !audio.muted;
+                muteBtn.textContent = audio.muted ? "🔇" : "🔊";
+            });
+
+            document.addEventListener("click", startAudio);
+            document.addEventListener("touchstart", startAudio);
+            document.addEventListener("keydown", startAudio);
+        </script>
+
+    </audio>
+
+</body>
+
+</html>

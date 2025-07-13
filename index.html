@@ -1,3 +1,8 @@
+<link rel="stylesheet" href="styles.css" />
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +10,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>watchyourtemper</title>
-  <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="images/thumbnail.jpg" />
 </head>
 <div class="grain-overlay"></div>
@@ -21,7 +25,6 @@
         </a>
       </div>
       <div class="nav-right">
-        <a href="gallery.html">Gallery</a>
         <a href="join.html">Join</a>
         <a href="https://www.instagram.com/watchyourtemper/" target="_blank">
           <img src="images/instagram.svg" alt="Instagram" class="social-icon" />
@@ -38,30 +41,38 @@
 
 
     <div class="center-text">
-      <a class="glitch-link" href="https://linktr.ee/watchyourtemper" target="_blank">
+      <a class="glitch-link" href="feed.html">
         feed the machine
       </a>
+
     </div>
   </div>
   <audio id="bg-audio" autoplay loop muted playsinline>
     <script>
       const audio = document.getElementById("bg-audio");
+      const muteBtn = document.getElementById("mute-btn");
 
-      // Unmute and play on first interaction
+      // Unmute on first interaction
       const startAudio = () => {
         audio.muted = false;
-        audio.play().catch(e => {
-          console.log("Autoplay failed:", e);
-        });
+        audio.play().catch(e => console.log("Autoplay failed:", e));
         document.removeEventListener("click", startAudio);
         document.removeEventListener("touchstart", startAudio);
         document.removeEventListener("keydown", startAudio);
       };
 
+      // Mute button toggle
+      muteBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // Prevent retriggering startAudio
+        audio.muted = !audio.muted;
+        muteBtn.textContent = audio.muted ? "🔇" : "🔊";
+      });
+
       document.addEventListener("click", startAudio);
       document.addEventListener("touchstart", startAudio);
       document.addEventListener("keydown", startAudio);
     </script>
+
 
     <source src="audio/s11_burial_loop.mp3" type="audio/mp3" />
   </audio>
