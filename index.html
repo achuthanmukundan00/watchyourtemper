@@ -1,81 +1,77 @@
 <link rel="stylesheet" href="styles.css" />
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>watchyourtemper</title>
-  <link rel="icon" type="image/png" href="images/thumbnail.jpg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>watchyourtemper</title>
+    <link rel="icon" type="image/png" href="images/thumbnail.jpg" />
 </head>
 <div class="grain-overlay"></div>
 
 <body>
-  <div class="overlay">
-    <button id="mute-btn">🔇</button>
+    <div class="overlay">
+        <button id="mute-btn">🔇</button>
 
-    <nav class="nav-top">
-      <div class="nav-left">
-        <a href="index.html">
-          <img src="images/logo.png" alt="Logo" class="logo" />
-        </a>
-      </div>
-      <div class="nav-right">
-        <a href="join.html">Join</a>
-        <a href="https://www.instagram.com/watchyourtemper/" target="_blank">
-          <img src="images/instagram.svg" alt="Instagram" class="social-icon" />
-        </a>
-        <a href="https://www.youtube.com/@watchyourtemper" target="_blank">
-          <img src="images/youtube.svg" alt="YouTube" class="social-icon" />
-        </a>
-        <a href="https://soundcloud.com/watchyourtemper" target="_blank">
-          <img src="images/soundcloud.svg" alt="SoundCloud" class="social-icon" />
-        </a>
-      </div>
-    </nav>
+        <nav class="nav-top">
+            <div class="nav-left">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="logo" />
+                </a>
+            </div>
+            <div class="nav-right">
+                <a href="join.html">Join</a>
+                <a href="https://www.instagram.com/watchyourtemper/" target="_blank">
+                    <img src="images/instagram.svg" alt="Instagram" class="social-icon" />
+                </a>
+                <a href="https://www.youtube.com/@watchyourtemper" target="_blank">
+                    <img src="images/youtube.svg" alt="YouTube" class="social-icon" />
+                </a>
+                <a href="https://soundcloud.com/watchyourtemper" target="_blank">
+                    <img src="images/soundcloud.svg" alt="SoundCloud" class="social-icon" />
+                </a>
+            </div>
+        </nav>
 
 
 
-    <div class="center-text">
-      <a class="glitch-link" href="feed.html">
-        feed the machine
-      </a>
+        <div class="center-text">
+            <a class="glitch-link" href="feed.html">
+                feed the machine
+            </a>
 
+        </div>
     </div>
-  </div>
-  <audio id="bg-audio" autoplay loop muted playsinline>
-    <script>
-      const audio = document.getElementById("bg-audio");
-      const muteBtn = document.getElementById("mute-btn");
+    <audio id="bg-audio" autoplay loop muted playsinline>
+        <script>
+            const audio = document.getElementById("bg-audio");
+            const muteBtn = document.getElementById("mute-btn");
 
-      // Unmute on first interaction
-      const startAudio = () => {
-        audio.muted = false;
-        audio.play().catch(e => console.log("Autoplay failed:", e));
-        document.removeEventListener("click", startAudio);
-        document.removeEventListener("touchstart", startAudio);
-        document.removeEventListener("keydown", startAudio);
-      };
+            const startAudio = () => {
+                audio.muted = false;
+                audio.play().catch(e => console.log("Autoplay failed:", e));
+                document.body.classList.add('image-active'); // Activate background image
+                document.removeEventListener("click", startAudio);
+                document.removeEventListener("touchstart", startAudio);
+                document.removeEventListener("keydown", startAudio);
+            };
 
-      // Mute button toggle
-      muteBtn.addEventListener("click", (e) => {
-        e.stopPropagation(); // Prevent retriggering startAudio
-        audio.muted = !audio.muted;
-        muteBtn.textContent = audio.muted ? "🔇" : "🔊";
-      });
+            muteBtn.addEventListener("click", (e) => {
+                e.stopPropagation(); // Prevent retriggering startAudio
+                audio.muted = !audio.muted;
+                muteBtn.textContent = audio.muted ? "🔇" : "🔊";
+            });
 
-      document.addEventListener("click", startAudio);
-      document.addEventListener("touchstart", startAudio);
-      document.addEventListener("keydown", startAudio);
-    </script>
+            document.addEventListener("click", startAudio);
+            document.addEventListener("touchstart", startAudio);
+            document.addEventListener("keydown", startAudio);
+        </script>
 
 
-    <source src="audio/s11_burial_loop_A.mp3" type="audio/mp3" />
-  </audio>
+
+        <source src="audio/s11_burial_loop_A.mp3" type="audio/mp3" />
+    </audio>
 </body>
 
 </html>
