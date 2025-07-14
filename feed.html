@@ -57,6 +57,7 @@
             const startAudio = () => {
                 audio.muted = false;
                 audio.play().catch(e => console.log("Autoplay failed:", e));
+                document.body.classList.add('image-active'); // Activate background image
                 document.removeEventListener("click", startAudio);
                 document.removeEventListener("touchstart", startAudio);
                 document.removeEventListener("keydown", startAudio);

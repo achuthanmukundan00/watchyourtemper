@@ -200,6 +200,7 @@ body::-webkit-scrollbar {
 
 .social-icon:hover {
   transform: scale(1.2);
+  animation: glitch 0.3s steps(2, end) infinite;
 }
 
 .center-text {
