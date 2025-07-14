@@ -10,30 +10,40 @@
 </head>
 <div class="grain-overlay"></div>
 
+<nav class="nav-top">
+    <a href="index.html">
+        <img src="images/logo.png" alt="Logo" class="logo" />
+
+        <div class="nav-right">
+    </a>
+    <button class="burger" id="burger-btn" aria-label="Toggle menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
+
+    <div class="mobile-overlay" id="mobileMenu">
+        <div class="menu-inner">
+            <a href="https://www.instagram.com/watchyourtemper/" target="_blank">
+                <img src="images/instagram.svg" alt="Instagram" class="social-icon" />
+            </a>
+            <a href="https://www.tiktok.com/@watchyourtemper" target="_blank">
+                <img src="images/tiktok.svg" alt="Tiktok" class="social-icon" />
+            </a>
+            <a href="https://www.youtube.com/@watchyourtemper" target="_blank">
+                <img src="images/youtube.svg" alt="YouTube" class="social-icon" />
+            </a>
+            <a href="https://soundcloud.com/watchyourtemper" target="_blank">
+                <img src="images/soundcloud.svg" alt="SoundCloud" class="social-icon" />
+            </a>
+        </div>
+    </div>
+    </div>
+</nav>
+
 <body>
     <div class="overlay">
         <button id="mute-btn">🔇</button>
-
-        <nav class="nav-top">
-            <div class="nav-left">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="Logo" class="logo" />
-                </a>
-            </div>
-            <div class="nav-right">
-                <a href="join.html">Join</a>
-                <a href="https://www.instagram.com/watchyourtemper/" target="_blank">
-                    <img src="images/instagram.svg" alt="Instagram" class="social-icon" />
-                </a>
-                <a href="https://www.youtube.com/@watchyourtemper" target="_blank">
-                    <img src="images/youtube.svg" alt="YouTube" class="social-icon" />
-                </a>
-                <a href="https://soundcloud.com/watchyourtemper" target="_blank">
-                    <img src="images/soundcloud.svg" alt="SoundCloud" class="social-icon" />
-                </a>
-            </div>
-        </nav>
-
 
 
         <div class="center-text">
@@ -72,6 +82,16 @@
 
         <source src="audio/s11_burial_loop_A.mp3" type="audio/mp3" />
     </audio>
+
+    <script>
+        const burger = document.getElementById("burger-btn");
+        const menu = document.getElementById("mobileMenu");
+
+        burger.addEventListener("click", () => {
+            menu.classList.toggle("show");
+        });
+    </script>
+
 </body>
 
 </html>
