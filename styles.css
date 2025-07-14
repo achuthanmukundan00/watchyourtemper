@@ -335,8 +335,22 @@ body::-webkit-scrollbar {
 
 .feed-page {
   background-color: black;
+  background-image: url('images/link_page_bg.gif');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   overflow-y: auto;
+  position: relative;
+}
+
+.feed-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, transparent 65%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .centered-feed {
@@ -362,6 +376,9 @@ body::-webkit-scrollbar {
   letter-spacing: 0.05em;
   color: white;
   animation: flicker 2.5s infinite;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 2;
 }
 
 .feed-sub {
@@ -378,20 +395,22 @@ body::-webkit-scrollbar {
 
 .feed-btn {
   font-family: 'Rinter';
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px solid #a42117;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #e54235;
   color: white;
   padding: 0.75rem 1.2rem;
   text-decoration: none;
   border-radius: 8px;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 2;
 }
 
 .feed-btn:hover {
-  background: #690e1d76;
+  background: #000000;
   transform: scale(1.05) translateX(1px);
-  color: #a42117;
+  color: #e54235;
   animation: pulse 0.3s ease-in-out;
+  box-shadow: 0 0 6px rgba(229, 66, 53, 0.5);
 }
 
 @keyframes pulse {
@@ -430,7 +449,8 @@ body::-webkit-scrollbar {
   border-radius: 50%;
   border: 1px solid #a42117;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(164, 33, 23, 0.4);
 }
 
 .profile-pic:hover {
